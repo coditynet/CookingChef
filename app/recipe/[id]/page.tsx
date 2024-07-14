@@ -4,10 +4,11 @@ export default async function Page({ params }) {
   const { id } = params;
 
   return (
-    <div className="container mx-auto my-20">
-      <div className="flex border-2 border-gray-300 cursor-pointer hover:border-black p-4">
+    <div className="">
+      <div className="lg:m-24">
+        <h1 className="py-4 font-semibold text-2xl text-center mb-4">Food</h1>
         {/* Image Section on the Left */}
-        <div className="relative w-[50%] h-[500px] mr-8">
+        <div className="relative w-[500%] h-[500px] mr-8">
           <Image
             src="/static"
             layout="fill"
@@ -17,13 +18,9 @@ export default async function Page({ params }) {
         </div>
 
         {/* Information Section on the Right */}
-        <div className="w-[50%]">
-          <h1 className="bg-white py-4 text-gray-500 font-semibold text-2xl text-center mb-4">
-            Food
-          </h1>
-
+        <div>
           {/* Ingredients Card */}
-          <div className="bg-white p-4 mb-4 border border-gray-300 rounded">
+          <div className=" p-4 mb-4 border border-gray-300 rounded">
             <h2 className="text-xl font-semibold mb-2">Ingredients:</h2>
             <div className="mb-2">
               <span className="font-semibold">Hallo:</span> 2g
@@ -31,11 +28,11 @@ export default async function Page({ params }) {
           </div>
 
           {/* Steps Card */}
-          <div className="bg-white p-4 mb-4 border border-gray-300 rounded">
+          <div className=" p-4 mb-4 border border-gray-300 rounded">
             <h2 className="text-xl font-semibold mb-2">Steps:</h2>
             <ol className="list-decimal pl-4">
-              <li>1. Kochen</li>
-              <li>2. Essen</li>
+              <li>Kochen</li>
+              <li>Essen</li>
             </ol>
           </div>
 
