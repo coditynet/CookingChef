@@ -15,3 +15,46 @@ datasource db {
   // uncomment next line if you use Prisma <5.10
   // directUrl = env("DATABASE_URL_UNPOOLED")
 }
+
+model Recipe {
+  id          Int        @id @default(autoincrement())
+  userId      String
+  title       String
+  ingredients String
+  description String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  categoryId  Int?    
+  category    Category?  @relation(fields: [categoryId], references: [id])
+
+  comments    Comment[]
+  likes       Like[]
+}
+
+model Category {
+  id        Int     @id @default(autoincrement())
+  name      String
+  recipes   Recipe[]
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  userId    String
+  content   String
+  recipeId  Int
+  recipe    Recipe    @relation(fields: [recipeId], references: [id])
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Like {
+  id        Int       @id @default(autoincrement())
+  userId    String
+  recipeId  Int
+  recipe    Recipe    @relation(fields: [recipeId], references: [id])
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
