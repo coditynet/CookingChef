@@ -82,10 +82,10 @@ export default function Dashboard() {
                   <span className="sr-only">Back</span>
                 </Button>
                 <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
-                  Pro Controller
+                  Recipe Name
                 </h1>
                 <Badge variant="outline" className="ml-auto sm:ml-0">
-                  In stock
+                  Published
                 </Badge>
                 <div className="hidden items-center gap-2 md:ml-auto md:flex">
                   <Button variant="outline" size="sm">
@@ -94,14 +94,12 @@ export default function Dashboard() {
                   <Button size="sm">Save Product</Button>
                 </div>
               </div>
-              <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
+              <div className="grid gap-4 md:grid-cols-[1fr_200px] lg:grid-cols-3 lg:gap-8">
                 <div className="grid auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
                   <Card x-chunk="dashboard-07-chunk-0">
                     <CardHeader>
                       <CardTitle>Product Details</CardTitle>
-                      <CardDescription>
-                        Lipsum dolor sit amet, consectetur adipiscing elit
-                      </CardDescription>
+                      <CardDescription>Describe your Product</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="grid gap-6">
@@ -111,7 +109,7 @@ export default function Dashboard() {
                             id="name"
                             type="text"
                             className="w-full"
-                            defaultValue="Gamer Gear Pro Controller"
+                            defaultValue="My Cool Food"
                           />
                         </div>
                         <div className="grid gap-3">
@@ -127,128 +125,62 @@ export default function Dashboard() {
                   </Card>
                   <Card x-chunk="dashboard-07-chunk-1">
                     <CardHeader>
-                      <CardTitle>Stock</CardTitle>
+                      <CardTitle>Ingridients</CardTitle>
                       <CardDescription>
-                        Lipsum dolor sit amet, consectetur adipiscing elit
+                        Provide your visitors with all needed ingredients
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
                       <Table>
                         <TableHeader>
                           <TableRow>
-                            <TableHead className="w-[100px]">SKU</TableHead>
-                            <TableHead>Stock</TableHead>
-                            <TableHead>Price</TableHead>
-                            <TableHead className="w-[100px]">Size</TableHead>
+                            <TableHead className="w-[100px]">Name</TableHead>
+                            <TableHead>Mesurement</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
                           <TableRow>
-                            <TableCell className="font-semibold">
-                              GGPC-001
-                            </TableCell>
                             <TableCell>
                               <Label htmlFor="stock-1" className="sr-only">
                                 Stock
                               </Label>
                               <Input
                                 id="stock-1"
-                                type="number"
-                                defaultValue="100"
+                                type="text"
+                                defaultValue="Eggs"
                               />
                             </TableCell>
                             <TableCell>
                               <Label htmlFor="price-1" className="sr-only">
-                                Price
+                                Musurmement
                               </Label>
                               <Input
-                                id="price-1"
-                                type="number"
-                                defaultValue="99.99"
+                                id="mesurement"
+                                type="text"
+                                defaultValue="2"
                               />
-                            </TableCell>
-                            <TableCell>
-                              <ToggleGroup
-                                type="single"
-                                defaultValue="s"
-                                variant="outline"
-                              >
-                                <ToggleGroupItem value="s">S</ToggleGroupItem>
-                                <ToggleGroupItem value="m">M</ToggleGroupItem>
-                                <ToggleGroupItem value="l">L</ToggleGroupItem>
-                              </ToggleGroup>
                             </TableCell>
                           </TableRow>
                           <TableRow>
-                            <TableCell className="font-semibold">
-                              GGPC-002
-                            </TableCell>
                             <TableCell>
-                              <Label htmlFor="stock-2" className="sr-only">
+                              <Label htmlFor="stock-1" className="sr-only">
                                 Stock
                               </Label>
                               <Input
-                                id="stock-2"
-                                type="number"
-                                defaultValue="143"
+                                id="stock-1"
+                                type="text"
+                                defaultValue="Eggs"
                               />
                             </TableCell>
                             <TableCell>
-                              <Label htmlFor="price-2" className="sr-only">
-                                Price
+                              <Label htmlFor="price-1" className="sr-only">
+                                Musurmement
                               </Label>
                               <Input
-                                id="price-2"
-                                type="number"
-                                defaultValue="99.99"
+                                id="mesurement"
+                                type="text"
+                                defaultValue="2"
                               />
-                            </TableCell>
-                            <TableCell>
-                              <ToggleGroup
-                                type="single"
-                                defaultValue="m"
-                                variant="outline"
-                              >
-                                <ToggleGroupItem value="s">S</ToggleGroupItem>
-                                <ToggleGroupItem value="m">M</ToggleGroupItem>
-                                <ToggleGroupItem value="l">L</ToggleGroupItem>
-                              </ToggleGroup>
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell className="font-semibold">
-                              GGPC-003
-                            </TableCell>
-                            <TableCell>
-                              <Label htmlFor="stock-3" className="sr-only">
-                                Stock
-                              </Label>
-                              <Input
-                                id="stock-3"
-                                type="number"
-                                defaultValue="32"
-                              />
-                            </TableCell>
-                            <TableCell>
-                              <Label htmlFor="price-3" className="sr-only">
-                                Stock
-                              </Label>
-                              <Input
-                                id="price-3"
-                                type="number"
-                                defaultValue="99.99"
-                              />
-                            </TableCell>
-                            <TableCell>
-                              <ToggleGroup
-                                type="single"
-                                defaultValue="s"
-                                variant="outline"
-                              >
-                                <ToggleGroupItem value="s">S</ToggleGroupItem>
-                                <ToggleGroupItem value="m">M</ToggleGroupItem>
-                                <ToggleGroupItem value="l">L</ToggleGroupItem>
-                              </ToggleGroup>
                             </TableCell>
                           </TableRow>
                         </TableBody>
@@ -257,17 +189,87 @@ export default function Dashboard() {
                     <CardFooter className="justify-center border-t p-4">
                       <Button size="sm" variant="ghost" className="gap-1">
                         <PlusCircle className="h-3.5 w-3.5" />
-                        Add Variant
+                        Add Ingridient
                       </Button>
                     </CardFooter>
                   </Card>
-                  <Card x-chunk="dashboard-07-chunk-2">
+                  <Card x-chunk="dashboard-07-chunk-1">
+                    <CardHeader>
+                      <CardTitle>Steps</CardTitle>
+                      <CardDescription>Explain your Recipe</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead className="w-[100px]">Step</TableHead>
+                            <TableHead>Mesurement</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          <TableRow>
+                            <TableCell>
+                              <Label htmlFor="stock-1" className="sr-only">
+                                Stock
+                              </Label>
+                              <Input
+                                id="stock-1"
+                                type="text"
+                                defaultValue="Eggs"
+                              />
+                            </TableCell>
+                            <TableCell>
+                              <Label htmlFor="price-1" className="sr-only">
+                                Musurmement
+                              </Label>
+                              <Input
+                                id="mesurement"
+                                type="text"
+                                defaultValue="2"
+                              />
+                            </TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell>
+                              <Label htmlFor="stock-1" className="sr-only">
+                                Stock
+                              </Label>
+                              <Input
+                                id="stock-1"
+                                type="text"
+                                defaultValue="Eggs"
+                              />
+                            </TableCell>
+                            <TableCell>
+                              <Label htmlFor="price-1" className="sr-only">
+                                Musurmement
+                              </Label>
+                              <Input
+                                id="mesurement"
+                                type="text"
+                                defaultValue="2"
+                              />
+                            </TableCell>
+                          </TableRow>
+                        </TableBody>
+                      </Table>
+                    </CardContent>
+                    <CardFooter className="justify-center border-t p-4">
+                      <Button size="sm" variant="ghost" className="gap-1">
+                        <PlusCircle className="h-3.5 w-3.5" />
+                        Add Ingridient
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+                <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+                  <Card x-chunk="dashboard-07-chunk-3">
                     <CardHeader>
                       <CardTitle>Product Category</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="grid gap-6 sm:grid-cols-3">
-                        <div className="grid gap-3">
+                      <div className="">
+                        <div className="">
                           <Label htmlFor="category">Category</Label>
                           <Select>
                             <SelectTrigger
@@ -287,31 +289,9 @@ export default function Dashboard() {
                             </SelectContent>
                           </Select>
                         </div>
-                        <div className="grid gap-3">
-                          <Label htmlFor="subcategory">
-                            Subcategory (optional)
-                          </Label>
-                          <Select>
-                            <SelectTrigger
-                              id="subcategory"
-                              aria-label="Select subcategory"
-                            >
-                              <SelectValue placeholder="Select subcategory" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="t-shirts">T-Shirts</SelectItem>
-                              <SelectItem value="hoodies">Hoodies</SelectItem>
-                              <SelectItem value="sweatshirts">
-                                Sweatshirts
-                              </SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
                       </div>
                     </CardContent>
                   </Card>
-                </div>
-                <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
                   <Card x-chunk="dashboard-07-chunk-3">
                     <CardHeader>
                       <CardTitle>Product Status</CardTitle>
@@ -338,20 +318,6 @@ export default function Dashboard() {
                     </CardContent>
                   </Card>
                   <ImageForm />
-                  <Card x-chunk="dashboard-07-chunk-5">
-                    <CardHeader>
-                      <CardTitle>Archive Product</CardTitle>
-                      <CardDescription>
-                        Lipsum dolor sit amet, consectetur adipiscing elit.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div></div>
-                      <Button size="sm" variant="secondary">
-                        Archive Product
-                      </Button>
-                    </CardContent>
-                  </Card>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-2 md:hidden">
